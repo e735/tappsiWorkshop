@@ -1,0 +1,13 @@
+<h2>Show badword</h2>
+
+<ul>
+
+  <li>
+    <strong>Palabra:</strong>
+    <%= @badword.palabra %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: badword_path(@conn, :edit, @badword) %></span>
+<span><%= link "Back", to: badword_path(@conn, :index) %></span>

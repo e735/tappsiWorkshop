@@ -1,0 +1,26 @@
+<h2>Listing badwords</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Palabra</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for badword <- @badwords do %>
+    <tr>
+      <td><%= badword.palabra %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: badword_path(@conn, :show, badword), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: badword_path(@conn, :edit, badword), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: badword_path(@conn, :delete, badword), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New badword", to: badword_path(@conn, :new) %></span>

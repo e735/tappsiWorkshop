@@ -1,0 +1,6 @@
+<h2>Edit badword</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: badword_path(@conn, :update, @badword) %>
+
+<span><%= link "Back", to: badword_path(@conn, :index) %></span>
